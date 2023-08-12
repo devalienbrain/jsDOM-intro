@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM JS</title>
+
+  <!-- Link with External CSS Files -->
+  <link rel="stylesheet" href="styles/style.css">
+
+  <!-- Inernal CSS Styles -->
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1> <span class="special-text"> DOM </span> - Document Object Model</h1>
+    <p>
+      DOM stands for <span class="special-text"> Document Object Model </span>. It is a programming interface that
+      allows
+      us to create, change, or remove
+      elements
+      from the document. We can also add events to these elements to make our page more dynamic.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h3>
+        Finding HTML Elements using DOM in JS
+      </h3>
+      <h5>
+        Often, with JavaScript, 5 ways to find the HTML elements
+      </h5>
+      <ul id="find-elements">
+        <li>
+          Finding HTML elements by tag name: <span class="special-text">
+            document.getElementsByTagName </span>("tag-name");
+        </li>
+        <li>
+          Finding HTML elements by class name: <span class="special-text">
+            document.getElementsByClassName </span> ("class-name");
+        </li>
+        <li>
+          Finding HTML elements by id: document. <span class="special-text"> getElementById</span> ("id-name");
+        </li>
+        <li>
+          Finding HTML elements by CSS selectors: <span class="special-text"> document.querySelectorAll
+          </span> ("#id-name
+          tag-name");
+        </li>
+        <li>
+          The Document method <span class="special-text"> document.querySelector() </span> returns the first Element
+          within the document that matches the specified
+          selector,
+          or group of selectors. If no matches are found, null is returned.
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+
+  </footer>
+
+  <!-- Link with External JS Files -->
+  <script src="scripts/script.js"></script>
+
+  <!-- Internal JS Scripts -->
+  <script>
+    console.log("hello from internal script.");
+
+    // getElementById
+    const ulFindElements = document.getElementById("find-elements");
+    console.log(ulFindElements.innerText);
+
+    //change by .innerText
+    // ulFindElements.innerText = 'Hacked by JS DOM!'
+
+    // change style by js dom
+    ulFindElements.style.color = 'green';
+
+    // create add an element from js using createElement and appendChild
+    /*const liNew = document.createElement('li');
+    liNew.innerText = "Hello from js";
+
+    ulFindElements.appendChild(liNew);*/
+
+
+
+  </script>
+</body>
+
+</html>
