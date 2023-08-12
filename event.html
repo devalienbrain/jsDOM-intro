@@ -15,18 +15,34 @@
   <!-- Process 2: id -->
   <button id="red-theme">Theme: Red</button>
 
+  <section>
+    <h3>Input Form</h3>
+    <p id="secret-message">THIS IS SECRET MESSAGE</p>
+    <input id="input-text" type="text" placeholder="type 'delete'">
+    <button id="hide-btn" disabled>Hide</button>
+  </section>
+
+  <script src="scripts/event.js"></script>
+
   <script>
-    // Process 1: onclick
-    function makeBlue() {
-      document.body.style.backgroundColor = 'blue';
-      document.body.style.color = 'white';
-    }
+    const inputText = document.getElementById('input-text');
 
-    // Process 2: getElementByid & addEventListener
-    document.getElementById('red-theme').addEventListener('click', function () {
-      document.body.style.backgroundColor = 'red';
-    })
+    const hideBtn = document.getElementById('hide-btn');
 
+    const secretMessage = document.getElementById('secret-message');
+
+    inputText.addEventListener('keyup', function () {
+      if (inputText.value === 'delete') {
+        hideBtn.disabled = false;
+      }
+      else {
+        hideBtn.disabled = true;
+      }
+    });
+
+    hideBtn.addEventListener('click', function () {
+      secretMessage.style.display = 'none';
+    });
   </script>
 
 </body>
