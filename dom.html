@@ -129,13 +129,39 @@
 
     // Step-1: Where to Add
     // mainBody already created
-    mainBody = getElementById('main-body');
+
     // Step-2: What to Add
-    const h5Second = createElement('h5');
+    const h5Second = document.createElement('h5');
     h5Second.innerText = "Another process innerHTML = ; to use:"
-    // Step-3: Add
+
+    // Step-3: Add / append
     mainBody.appendChild(h5Second);
 
+    const ulSecond = document.createElement('ul');
+
+    const liSecond = document.createElement('li');
+    liSecond.innerText = ".innerHTML= ` HTML tags, new-line, text etc. `;"
+
+    ulSecond.appendChild(liSecond);
+    mainBody.appendChild(ulSecond);
+
+    // Create a new section by innerHTML
+    // STEP 1: Where to add
+    // In this case main body already got
+
+    // STEP 2: What sontents/text to add
+    const sectionThreeSteps = document.createElement('section');
+    sectionThreeSteps.innerHTML = `
+<h3> Three Steps to add elelment to HTML from JS using DOM </h3>
+<ul>
+  <li> Step 1: Where to add. Get the element by getElementById</li>
+  <li> Step 2: What to add. Set the contents/text by innerHTML/ innerText</li>
+  <li> Step 3: Add/append. Use appendChild() method.</li>
+  </ul>
+`;
+
+    // STEP 3: Append
+    mainBody.appendChild(sectionThreeSteps);
   </script>
 </body>
 
