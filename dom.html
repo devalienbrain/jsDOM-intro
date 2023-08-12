@@ -27,7 +27,7 @@
     </p>
   </header>
 
-  <main>
+  <main id="main-body">
     <section>
       <h3>
         Finding HTML Elements using DOM in JS
@@ -89,7 +89,52 @@
 
     ulFindElements.appendChild(liNew);*/
 
+    // create a new section using innerText
 
+    // Step-1: Create Or where to add
+
+    const mainBody = document.getElementById('main-body');
+
+    // Step-2: what to add
+
+    const sectionNew = document.createElement('section');
+
+    const h3New = document.createElement('h3');
+    h3New.innerText = 'Add HTML Contents from JS or Script Code';
+
+    const h5New = document.createElement('h5');
+    h5New.innerText = 'Using innerText = ; process:';
+
+    const ulNew = document.createElement('ul');
+
+    const liNewOne = document.createElement('li');
+    liNewOne.innerText = 'document.createElement(tagName);';
+
+    const liNewTwo = document.createElement('li');
+    liNewTwo.innerText = '.innerText = ;';
+
+    const liNewThree = document.createElement('li');
+    liNewThree.innerText = '.appendChild();';
+
+
+    // Step-3: Add Or execute
+    mainBody.appendChild(h3New);
+    mainBody.appendChild(h5New);
+    mainBody.appendChild(ulNew);
+    ulNew.appendChild(liNewOne);
+    ulNew.appendChild(liNewTwo);
+    ulNew.appendChild(liNewThree);
+
+    // Using innerHTML= ; process:
+
+    // Step-1: Where to Add
+    // mainBody already created
+    mainBody = getElementById('main-body');
+    // Step-2: What to Add
+    const h5Second = createElement('h5');
+    h5Second.innerText = "Another process innerHTML = ; to use:"
+    // Step-3: Add
+    mainBody.appendChild(h5Second);
 
   </script>
 </body>
