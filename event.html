@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Js Dom Event handlers</title>
+</head>
+
+<body>
+  <h2>JS DOM Event Handlers</h2>
+  <!-- Process 1: onclick -->
+  <button onclick="makeBlue()">Theme: Blue</button>
+
+  <!-- Process 2: id -->
+  <button id="red-theme">Theme: Red</button>
+
+  <script>
+    // Process 1: onclick
+    function makeBlue() {
+      document.body.style.backgroundColor = 'blue';
+      document.body.style.color = 'white';
+    }
+
+    // Process 2: getElementByid & addEventListener
+    document.getElementById('red-theme').addEventListener('click', function () {
+      document.body.style.backgroundColor = 'red';
+    })
+
+  </script>
+
+</body>
+
+</html>

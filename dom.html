@@ -6,16 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM JS</title>
 
+
+
   <!-- Link with External CSS Files -->
   <link rel="stylesheet" href="styles/style.css">
 
   <!-- Inernal CSS Styles -->
   <style>
-
+    @media screen and (max-width: 576px) {
+      body {
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+    }
   </style>
 </head>
 
-<body>
+<body style="margin-left: 10%; margin-right: 10%;">
   <header>
     <h1> <span class="special-text"> DOM </span> - Document Object Model</h1>
     <p>
@@ -45,7 +52,7 @@
             document.getElementsByClassName </span> ("class-name");
         </li>
         <li>
-          Finding HTML elements by id: document. <span class="special-text"> getElementById</span> ("id-name");
+          Finding HTML elements by id: <span class="special-text"> document. getElementById </span> ("id-name");
         </li>
         <li>
           Finding HTML elements by CSS selectors: <span class="special-text"> document.querySelectorAll
@@ -71,11 +78,9 @@
 
   <!-- Internal JS Scripts -->
   <script>
-    console.log("hello from internal script.");
 
     // getElementById
     const ulFindElements = document.getElementById("find-elements");
-    console.log(ulFindElements.innerText);
 
     //change by .innerText
     // ulFindElements.innerText = 'Hacked by JS DOM!'
