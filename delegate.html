@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Delegate</title>
+</head>
+
+<body>
+  <main>
+    <section>
+      <h3>Event delegate test</h3>
+      <ul>
+        <li class="list-item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus.</li>
+        <li class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ho tore koise.</li>
+        <li class="list-item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla ducimus in omnis.
+          Pariatur?</li>
+        <li class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, animi modi.</li>
+        <li class="list-item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Boldar ghorer bolda ekta.</li>
+      </ul>
+      <div>
+        <button id="add-btn">Add new</button>
+      </div>
+    </section>
+  </main>
+  <script>
+    // event delegate task
+    const listItems = document.getElementsByClassName('list-item');
+    console.log(listItems);
+    for (const item of listItems) {
+      // console.log(item.parentElement);
+      item.addEventListener('click', function (event) {
+        event.target.parentNode.removeChild(event.target);
+      });
+    }
+
+    document.getElementById('add-btn').addEventListener('click', function () {
+      const liNew = document.createElement('li');
+      liNew.innerText = 'A new item added'
+      document.getElementsByTagName('ul').appendChild(liNew);
+    })
+  </script>
+</body>
+
+</html>
