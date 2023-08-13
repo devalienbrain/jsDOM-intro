@@ -22,26 +22,42 @@
     <button id="hide-btn" disabled>Hide</button>
   </section>
 
+  <!-- Add comments section -->
+  <section id="comment-sec">
+    <h3>Comments Section</h3>
+    <div>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni blanditiis delectus nesciunt adipisci tempore
+        ipsam dolore unde aliquam molestiae voluptatibus? Odio deserunt minus aperiam ipsa omnis veniam adipisci facilis
+        perferendis.</p>
+    </div>
+    <div>
+      <p>Corrupti, similique consequatur voluptatem iste, veritatis vero magni molestiae exercitationem quasi quis,
+        voluptates minima consequuntur suscipit nam tempore delectus. Laboriosam ducimus adipisci eos architecto nam
+        neque sit repellat. Nobis, odit?</p>
+    </div>
+    <div>
+      <p>Excepturi consequatur exercitationem aliquid eligendi illo placeat, ipsa quis vero tenetur, ratione fugiat
+        tempora? Vero nihil esse dolor officia reiciendis eum fugiat omnis, totam, quas voluptatibus consequatur dolore
+        dicta accusantium!</p>
+    </div>
+  </section>
+  <div>
+    <textarea name="" id="new-comment" cols="60" rows="5"></textarea>
+    <p>
+      <button id="post-btn"> Add Comment </button>
+    </p>
+  </div>
   <script src="scripts/event.js"></script>
 
   <script>
-    const inputText = document.getElementById('input-text');
-
-    const hideBtn = document.getElementById('hide-btn');
-
-    const secretMessage = document.getElementById('secret-message');
-
-    inputText.addEventListener('keyup', function () {
-      if (inputText.value === 'delete') {
-        hideBtn.disabled = false;
-      }
-      else {
-        hideBtn.disabled = true;
-      }
-    });
-
-    hideBtn.addEventListener('click', function () {
-      secretMessage.style.display = 'none';
+    // add comments
+    document.getElementById('post-btn').addEventListener('click', function () {
+      const newComment = document.getElementById('new-comment');
+      const commentSec = document.getElementById('comment-sec');
+      const newP = document.createElement('p');
+      newP.innerText = newComment.value;
+      commentSec.appendChild(newP);
+      newComment.value = '';
     });
   </script>
 
