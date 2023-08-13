@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Bubble</title>
+</head>
+
+<body id="body">
+  <main id="main-body">
+    <section id="bubble-sec">
+      <h3>Event Bubble Testing</h3>
+      <ul id="ul-list">
+        <li id=li1-text>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+        <li id=li2-text>Obcaecati eaque labore voluptatibus sapiente, eum ut!</li>
+        <li id=li3-text>Vitae nemo voluptate qui, labore laboriosam quisquam.</li>
+        <li id=li4-text>Consectetur porro ratione perspiciatis quod libero architecto?</li>
+        <li id=li5-text>Adipisci sed nam mollitia quisquam maiores. Facere.</li>
+      </ul>
+
+    </section>
+  </main>
+  <script>
+    // Event bubble test
+    document.getElementById('li3-text').addEventListener('click', function (event) {
+      console.log('li khaise');
+      document.getElementById('li3-text').style.color = 'tomato';
+      event.stopPropagation();
+    });
+    document.getElementById('ul-list').addEventListener('click', function () {
+      console.log('eibar ul paise');
+      document.getElementById('ul-list').style.background = 'green';
+    });
+    document.getElementById('bubble-sec').addEventListener('click', function () {
+      console.log('khaise amare! Section');
+      document.getElementById('bubble-sec').style.border = 'red';
+      document.getElementById('bubble-sec').style.borderWidth = '2px';
+    });
+    document.getElementById('main-body').addEventListener('click', function () {
+      console.log('Main re baba');
+    });
+    document.getElementById('body').addEventListener('click', function () {
+      console.log('Ami tor dada');
+      document.getElementById('body').style.background = 'black';
+      document.getElementById('body').style.color = 'white';
+
+    });
+  </script>
+</body>
+
+</html>
