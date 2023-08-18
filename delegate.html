@@ -11,7 +11,7 @@
   <main>
     <section>
       <h3>Event delegate test</h3>
-      <ul>
+      <ul id="ul-main">
         <li class="list-item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus.</li>
         <li class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ho tore koise.</li>
         <li class="list-item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla ducimus in omnis.
@@ -25,8 +25,13 @@
     </section>
   </main>
   <script>
-    // event delegate task
-    const listItems = document.getElementsByClassName('list-item');
+
+    /* event delegate task */
+
+    /*
+    // delete item- Wrong System
+    // querySelectorAll is Static. It cannot delete new added items
+    const listItems = document.querySelectorAll('li');
     console.log(listItems);
     for (const item of listItems) {
       // console.log(item.parentElement);
@@ -34,12 +39,56 @@
         event.target.parentNode.removeChild(event.target);
       });
     }
+    */
 
+    /*
+       // delete item- Bubble System
+        const listItems = document.getElementsByClassName('list-item');
+        console.log(listItems);
+        for (const item of listItems) {
+          // console.log(item.parentElement);
+          item.addEventListener('click', function (event) {
+            event.target.parentNode.removeChild(event.target);
+          });
+        }
+    */
+
+    // delete item- Bubble System
+    const parentOfList = document.getElementById('ul-main');
+    console.log(parentOfList.childNodes);
+    parentOfList.addEventListener('click', function (event) {
+      parentOfList.removeChild(event.target);
+    });
+
+
+    // add item- Bubble System
     document.getElementById('add-btn').addEventListener('click', function () {
       const liNew = document.createElement('li');
       liNew.innerText = 'A new item added'
-      document.getElementsByTagName('ul').appendChild(liNew);
-    })
+      document.getElementById('ul-main').appendChild(liNew);
+      liNew.className = 'list-item';
+    });
+
+    /*
+    // add item- Vejailla & faul system
+    document.getElementById('add-btn').addEventListener('click', function () {
+      const liNew = document.createElement('li');
+      liNew.innerText = 'A new item added'
+      document.getElementById('ul-main').appendChild(liNew);
+      liNew.className = 'list-item';
+ 
+      const listItems = document.getElementsByClassName('list-item');
+      console.log(listItems);
+      for (const item of listItems) {
+        // console.log(item.parentElement);
+        item.addEventListener('click', function (event) {
+          event.target.parentNode.removeChild(event.target);
+        });
+      }
+ 
+    });
+*/
+
   </script>
 </body>
 

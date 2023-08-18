@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS DOM Get Element Properties</title>
+  <style>
+    .special-text {
+      font-weight: bolder;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="ul-container">
+    <ul>
+      <li class="li-item"><span class="special-text">getElementById</span>;</li class="li-item">
+      Return an element.
+      <li class="li-item"><span class="special-text">getElementsByClassName</span>, &</li class="li-item">
+      <li class="li-item"><span class="special-text">getElementsByTagName</span>;</li class="li-item">
+      Returns HTML Collections & Dynamic.
+      <li class="li-item"><span class="special-text">getElementsByName</span>, &</li class="li-item">
+      <li class="li-item"><span class="special-text">querySelectorAll</span>;</li class="li-item">
+      Returns Node Lists & static.
+      <li class="li-item"><span class="special-text">querySelector</span></li class="li-item">
+      Return the 1st element.
+    </ul>
+  </section>
+
+  <!-- JS part -->
+  <script>
+
+    /* getElementById */
+    const listGetById = document.getElementById('ul-container');
+    // console.log('ElementGetById: ', listGetById);
+    // console.log(listGetById.innerText);
+
+    /* getElementsByClass */
+    const listGetByClass = document.getElementsByClassName('li-item');
+    // console.log('ListGetByClassName: ', listGetByClass);
+    // console.log(listGetByClass[1].innerText);
+
+    /* getElementsByTagName */
+    const listGetByTag = document.getElementsByTagName('li');
+    // console.log('ListGetByTagName: ', listGetByTag);
+    // console.log(listGetByTag[1].innerText);
+
+    /* getElementsByName */
+    const listGetByName = document.getElementsByName('li');
+    // console.log('ListGetByName: ', listGetByName);
+    // console.log(listGetByName);
+
+    /* querySelectorAll */
+    const listGetByQueryAll = document.querySelectorAll('.li-item');
+    console.log('ListGetByQueryAll: ', listGetByQueryAll);
+    console.log(listGetByQueryAll[0].parentNode);
+
+    /* querySelector */
+    const listGetByQuery = document.querySelector('.li-item');
+    // console.log('ListGetByQuery: ', listGetByQuery);
+    // console.log(listGetByQuery);
+
+  </script>
+</body>
+
+</html>
